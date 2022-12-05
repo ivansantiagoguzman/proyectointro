@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC>
+<html>
+    <head>
+        <title>Suma de dos números</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script>
+ 
+function algoritmo()
+{
+    let a, b, suma;
+    a = parseFloat (document.formulario1.a.value);
+    b = parseFloat (document.formulario1.b.value);
+    suma=a+b;
+    document.formulario1.suma.value = suma;
+}
+ 
+        </script>
+    </head>
+    <body>
+        <form name="formulario1">
+            <table style="text-align: left; margin-left: auto; margin-right: auto;">
+                <tbody>
+                    <tr>
+                        <td>
+                            <label for="a">Ingresa el valor de a:</label>
+                        </td>
+                        <td>
+                            <input name="a" required="required" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="b">Ingresa el valor de b:</label>
+                        </td>
+                        <td>
+                            <input name="b" required="required" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                    <tr align="center">
+                        <td colspan="2" rowspan="1">
+                            <input value="Procesar" type="button" onclick="algoritmo();" />
+                            <input type="reset" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="suma">Valor de suma:</label>
+                        </td>
+                        <td>
+                            <input name="suma" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </body>
+</html>
