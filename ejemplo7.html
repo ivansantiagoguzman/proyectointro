@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC>
+<html>
+    <head>
+        <title>Tiempo de viaje</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script>
+ 
+function algoritmo()
+{
+    let distancia_en_km, tiempo_en_h, velocidad_en_km_por_h;
+    distancia_en_km = parseFloat (document.formulario1.distancia_en_km.value);
+    velocidad_en_km_por_h = parseFloat (document.formulario1.velocidad_en_km_por_h.value);
+    tiempo_en_h=distancia_en_km/velocidad_en_km_por_h;
+    document.formulario1.tiempo_en_h.value = tiempo_en_h;
+}
+ 
+        </script>
+    </head>
+    <body>
+        <form name="formulario1">
+            <table style="text-align: left; margin-left: auto; margin-right: auto;">
+                <tbody>
+                    <tr>
+                        <td>
+                            <label for="distancia_en_km">Ingresa el valor de distancia en km:</label>
+                        </td>
+                        <td>
+                            <input name="distancia_en_km" required="required" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="velocidad_en_km_por_h">Ingresa el valor de velocidad en km por h:</label>
+                        </td>
+                        <td>
+                            <input name="velocidad_en_km_por_h" required="required" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                    <tr align="center">
+                        <td colspan="2" rowspan="1">
+                            <input value="Procesar" type="button" onclick="algoritmo();" />
+                            <input type="reset" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="tiempo_en_h">Valor de tiempo en h:</label>
+                        </td>
+                        <td>
+                            <input name="tiempo_en_h" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </body>
+</html>
