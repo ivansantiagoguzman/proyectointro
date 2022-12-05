@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Índice de masa corporal</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script>
+ 
+function algoritmo()
+{
+    let IMC, altura_en_m, peso_en_kg;
+    altura_en_m = parseFloat (document.formulario1.altura_en_m.value);
+    peso_en_kg = parseFloat (document.formulario1.peso_en_kg.value);
+    IMC=peso_en_kg/altura_en_m/altura_en_m;
+    if(IMC<16)
+        alert('Criterio de ingreso en hospital.');
+    if(IMC>=16&&IMC<17)
+        alert('Infrapeso.');
+    if(IMC>=17&&IMC<18)
+        alert('Bajo peso.');
+    if(IMC>=18&&IMC<25)
+        alert('Peso normal (saludable).');
+    if(IMC>=5&&IMC<30)
+        alert('Sobrepeso (obesidad de grado I).');
+    if(IMC>=30&&IMC<35)
+        alert('Sobrepeso cr\u00F3nico (obesidad de grado II).');
+    if(IMC>=35&&IMC<40)
+        alert('Obesidad prem\u00F3rbida (obesidad de grado III).');
+    if(IMC>=40)
+        alert('Obesidad m\u00F3rbida (obesidad de grado IV).');
+    document.formulario1.IMC.value = IMC;
+}
+ 
+        </script>
+    </head>
+    <body>
+        <form name="formulario1">
+            <table style="text-align: left; margin-left: auto; margin-right: auto;">
+                <tbody>
+                    <tr>
+                        <td>
+                            <label for="altura_en_m">Ingresa el valor de altura en m:</label>
+                        </td>
+                        <td>
+                            <input name="altura_en_m" required="required" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="peso_en_kg">Ingresa el valor de peso en kg:</label>
+                        </td>
+                        <td>
+                            <input name="peso_en_kg" required="required" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                    <tr align="center">
+                        <td colspan="2" rowspan="1">
+                            <input value="Procesar" type="button" onclick="algoritmo();" />
+                            <input type="reset" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="IMC">Valor de IMC:</label>
+                        </td>
+                        <td>
+                            <input name="IMC" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </body>
+</html>
