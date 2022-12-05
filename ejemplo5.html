@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC>
+<html>
+    <head>
+        <title>Operaciones con el teorema de Pitágoras</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script>
+ 
+function algoritmo()
+{
+    let operacion;
+    let a, b, resultado;
+    a = parseFloat (document.formulario1.a.value);
+    b = parseFloat (document.formulario1.b.value);
+    operacion = parseInt (document.formulario1.operacion.value);
+    resultado=0;
+    if(operacion==1&&b!=0)
+        resultado=Math.atan(a/b)*180.0/Math.PI;
+    if(operacion==1&&b==0)
+        alert('Error');
+    if(operacion==2)
+        resultado=Math.sqrt(a*a+b*b);
+    if(operacion==3&&a>=b)
+        resultado=Math.sqrt(a*a-b*b);
+    if(operacion==3&&a<b)
+        alert('Error');
+    if(operacion==4&&b>=a)
+        resultado=Math.sqrt(b*b-a*a);
+    if(operacion==4&&b<a)
+        alert('Error');
+    document.formulario1.resultado.value = resultado;
+}
+ 
+        </script>
+    </head>
+    <body>
+        <form name="formulario1">
+            <table style="text-align: left; margin-left: auto; margin-right: auto;">
+                <tbody>
+                    <tr>
+                        <td>
+                            <label for="a">Ingresa el valor de a:</label>
+                        </td>
+                        <td>
+                            <input name="a" required="required" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="b">Ingresa el valor de b:</label>
+                        </td>
+                        <td>
+                            <input name="b" required="required" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="operacion">Selecciona el valor de operacion:</label>
+                        </td>
+                        <td>
+                            <select name="operacion" required="required">
+                                <option value="1">&Aacute;ngulo</option>
+                                <option value="2">Hipotenusa</option>
+                                <option value="3">Cateto opuesto</option>
+                                <option value="4">Cateto adyacente</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr align="center">
+                        <td colspan="2" rowspan="1">
+                            <input value="Procesar" type="button" onclick="algoritmo();" />
+                            <input type="reset" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="resultado">Valor de resultado:</label>
+                        </td>
+                        <td>
+                            <input name="resultado" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </body>
+</html>
